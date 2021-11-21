@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
 import json
-import config
 import sqlite3
 from models import functions
 from flask import Flask
