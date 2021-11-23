@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
-import time
 import json
-import sqlite3
 from models import functions
 from flask import Flask
-from flask import request
 from flask import render_template
-from flask_apscheduler import APScheduler
 
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -28,21 +24,10 @@ def get_data():
     return data
 
 
-@app.route('/geo_shanghai_json', methods=["GET", "POST"])
-def geo_shanghai_json():
-    with open(r'data/chinageo.json', encoding='utf_8_sig') as f:
-        test_line = json.load(f)
-        f.close()
-    return test_line
-
-
 @app.route('/error')
 def error():
     return '404 not found'
 
 
 if __name__ == '__main__':
-    scheduler = APScheduler()
-    scheduler.init_app(app)
-    scheduler.start()
     app.run(host='0.0.0.0', debug=False, port=173)
