@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
-from models import functions
+# from models import functions
 from flask import Flask
 from flask import render_template
 
