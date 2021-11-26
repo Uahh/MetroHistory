@@ -1504,6 +1504,7 @@ class Auto_Js(object):
 
     def animte_option(self) -> str:
         last = {}
+        cnt = 0
         for year in self.year_line:
             last[year] = []
         for metro_line in self.raw_data['metro']:  # 遍历每条地铁线
@@ -1529,9 +1530,10 @@ class Auto_Js(object):
                     for j in range(begin + 1, end + 2):
                         data.append([metro_line[j][4], metro_line[j][3]])
                     temp_station = self.template_frame_string.replace("${frame_number}", str(frame_number))\
-                        .replace("${data}", str([{"coords": data}]))\
+                        .replace("${data}", str([{"coords": data, "curveness": 0.5}]))\
                         .replace("${rgb}", str(rgb))\
                         .replace("${rgba}", str(rgba))
+                    cnt += 1
                     self.year_line[str(frame_number)].append(temp_station)
                     if i == frame[1]:
                         last[str(frame_number)].append(temp_station)
