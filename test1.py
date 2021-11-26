@@ -20,7 +20,7 @@ while line:
     temp1 = temp[0]
     temp[0] = str(temp[1]) + '号线'
     temp[1] = temp1
-    if temp[0] == "5号线":
+    if temp[0] == "11号线":
         temp[1] = temp[1].split("\"")[1]
         temp[2] = int(temp[2]) - 1
         temp[3] = float(temp[3])
