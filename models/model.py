@@ -1424,6 +1424,7 @@ class Auto_Js(object):
         self.template_timeline_string = """
         timeline: {
             axisType: 'category',
+            autoPlay: true,
             loop: ${loop},
             playInterval: ${play_interval},
             data: ${year},
@@ -1573,7 +1574,7 @@ class Auto_Js(object):
 if __name__ == '__main__':
     auto_js = Auto_Js('data/Shanghai_Metro.json')
     auto_js.set_center('[121.3803798526, 31.1128250311]')
-    auto_js.set_zoom('11')
+    auto_js.set_zoom('11.5')
     auto_js.set_play_interval('1000')
     auto_js.set_loop('false')
     auto_js.dump('./static/js/Shanghai_Metro.js')
