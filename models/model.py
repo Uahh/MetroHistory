@@ -1442,7 +1442,7 @@ class Auto_Js(object):
                     data: ${data},
                     silent: true,
                     effect: {
-                        show: true
+                        show: ${effect}
                     },
                     animation: false,
                     lineStyle: {
@@ -1451,7 +1451,7 @@ class Auto_Js(object):
                         width: 2,
                         cap: 'round',
                         shadowColor: '${rgba}',
-                        shadowBlur: 5
+                        shadowBlur: 1
                     }
                 },
         """
@@ -1516,23 +1516,29 @@ class Auto_Js(object):
 
                     rgb = 'rgb(' + metro_line[0]['rgb'] + ')'
                     rgba = 'rgba(' + metro_line[0]['rgb'] + ', 0.3)'
+                    # rgba = ''
+                    effect = 'true'
                     if i == frame[0]:
                         rgb = 'rgb(128, 128, 128)'
                         rgba = 'rgba(128, 128, 128, 0.3)'
+                        # effect = 'false'
                     if i >= frame[0] + 1:
                         rgb = 'rgb(215, 215, 215)'
                         rgba = 'rgba(215, 215, 215, 0.6)'
+                        # effect = 'false'
                     if i == frame[1]:
                         rgb = 'rgb(' + metro_line[0]['rgb'] + ')'
                         rgba = 'rgba(' + metro_line[0]['rgb'] + ', 0.3)'
+                        # effect = 'false'
 
                     data = []
                     for j in range(begin + 1, end + 2):
                         data.append([metro_line[j][4], metro_line[j][3]])
                     temp_station = self.template_frame_string.replace("${frame_number}", str(frame_number))\
                         .replace("${data}", str([{"coords": data, "curveness": 0.5}]))\
-                        .replace("${rgb}", str(rgb))\
-                        .replace("${rgba}", str(rgba))
+                        .replace("${rgb}", rgb)\
+                        .replace("${rgba}", rgba)\
+                        .replace("${effect}", effect)
                     cnt += 1
                     self.year_line[str(frame_number)].append(temp_station)
                     if i == frame[1]:
@@ -1567,7 +1573,7 @@ class Auto_Js(object):
 if __name__ == '__main__':
     auto_js = Auto_Js('data/Shanghai_Metro.json')
     auto_js.set_center('[121.3803798526, 31.1128250311]')
-    auto_js.set_zoom('12')
+    auto_js.set_zoom('11')
     auto_js.set_play_interval('1000')
     auto_js.set_loop('false')
     auto_js.dump('./static/js/Shanghai_Metro.js')
