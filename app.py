@@ -18,7 +18,7 @@ def index():
 
 @app.route('/get_data', methods=["GET", "POST"])
 def get_data():
-    with open(r'data/test.json', encoding='utf-8') as f:
+    with open(r'data/Shanghai_Metro.json', encoding='utf-8') as f:
         data = json.load(f)
         f.close()
     return data
