@@ -16,18 +16,10 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/get_data', methods=["GET", "POST"])
-def get_data():
-    with open(r'data/Shanghai_Metro.json', encoding='utf-8') as f:
-        data = json.load(f)
-        f.close()
-    return data
-
-
 @app.route('/error')
 def error():
     return '404 not found'
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False, port=173)
+    app.run(host='0.0.0.0', debug=False, port=173)  #inami
