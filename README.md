@@ -4,7 +4,7 @@
 
 Demo网址：https://uahh.magiconch.com/metro-history/
 
-
+![Shanghai]](https://github.com/Uahh/MetroHistory/blob/main/data/shanghai.gif)
 
 ### 实现原理
 项目输入为Json数据，数据包含每条地铁站点的坐标，建设和开通时间等信息。
@@ -68,3 +68,6 @@ git clone https://github.com/Uahh/MetroHistory
 python models/model.py
 ```
 效果可在index.html中查看。
+
+### 感谢
+感谢[@itorr](https://github.com/itorr)为本项目提供的支持与帮助，感谢！
