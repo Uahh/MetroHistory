@@ -1,0 +1,53 @@
+
+html{
+    background:#000;
+    color:#FFF;
+    overflow: hidden;
+    font:12px sans-serif;
+}
+.ec-extension-bmap{
+    background-color: #000 !important;
+}
+body{
+    margin:0;
+    overflow: hidden;
+}
+#main{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: index 0;;
+}
+.anchorBL{
+    display: none;
+}
+.head{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1;
+    padding:5px 15px;
+    pointer-events: none;;
+}
+footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    pointer-events: none;
+    padding:4px;
+    font-size:12px;
+}
+footer a{
+    pointer-events: auto;
+    color:#FFF;
+    text-decoration: none;
+}
+h1{
+    margin-bottom:0;
+    padding-bottom:0;
+    margin-top:0;
+}
